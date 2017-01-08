@@ -1,7 +1,7 @@
 NAME =fillit
 SRC_DIR =./
 INCLUDES_DIR =./
-SRCS=main test
+SRCS=main 
 FLAGS=-Wall -Wextra -Werror
 BINS = $(patsubst %,%.o,$(SRCS))
 LIBS =libft

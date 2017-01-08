@@ -6,12 +6,11 @@
 /*   By: jgaillar <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/04 15:24:17 by jgaillar          #+#    #+#             */
-/*   Updated: 2017/01/04 15:27:29 by jgaillar         ###   ########.fr       */
+/*   Updated: 2017/01/08 10:31:04 by mghazari         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef FILLIT_H
-
 # define FILLIT_H
 
 #include "libft.h"
@@ -23,6 +22,5 @@ typedef struct		s_tetri
 	int				y[4];
 	int				letter;
 }					t_tetri;
-
 
 #endif

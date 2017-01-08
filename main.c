@@ -6,7 +6,7 @@
 /*   By: jgaillar <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/04 15:25:56 by jgaillar          #+#    #+#             */
-/*   Updated: 2017/01/07 15:08:56 by mghazari         ###   ########.fr       */
+/*   Updated: 2017/01/08 10:29:38 by mghazari         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,9 +17,9 @@ int	main(int argc, char *argv[])
 	/*
 	 * TODO
 	 */
-	if (argv[1][0] == 'x')
-		return (1);
 	if (argc != 2)
 		return (-1);
+	if (argv[1][0] == 'x')
+		return (1);
 	return (0);
 }
