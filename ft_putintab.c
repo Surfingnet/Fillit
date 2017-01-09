@@ -1,18 +1,6 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   ft_putintab.c                                      :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: jgaillar <marvin@42.fr>                    +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/01/09 13:34:01 by jgaillar          #+#    #+#             */
-/*   Updated: 2017/01/09 13:34:05 by jgaillar         ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
+nclude "fillit.h"
 
-#include "fillit.h"
-
-char	**ft_putintab(char *s, int len)
+char**ft_putintab(char *s, int le	n)
 {
 	char **tab;
 	int i;
@@ -26,12 +14,18 @@ char	**ft_putintab(char *s, int len)
 
 	if (!(tab = (char **)malloc(sizeof(char *) * (len + 1))))
 		return (NULL);
-	while (s[i] != '\0')
+	while (s[j] != '\0' && tab[u])
 	{
-		while (s[i] != '\n' && s[i + 1] != '\n' && s[i + 1] != '\0')
-			j++;
-		tab[u] = ft_strsub(s, i, j - i);
 		i = j;
+		j = 0;
+		while (s[j] != '\n' && s[j + 1] != '\n' && s[j + 1] != '\0')
+		{
+			j++;
+		}
+		tab[u] = ft_strsub(s, i, j - i);
+		ft_putendl(tab[u]);
+		u++;
 	}
+	tab[u] = NULL;
 	return (tab);
 }
