@@ -12,7 +12,7 @@
 
 #include "fillit.h"
 
-int	check_file(const char *str)
+int	ft_checkfile(const char *str)
 {
 	int	i;
 	int	t;
@@ -24,7 +24,7 @@ int	check_file(const char *str)
 		if ((str[i] != '.' && str[i] != '#' && str[i] != '\n') \
 				|| (i % 4 == 0 && str[i] != '\n')\
 				|| (str[i] == '\n' && i % 4 != 0))
-			return (0);
+			return (1);
 		if (str[i] == '\n')
 		{
 			if (str[i + 1] == '\0')
@@ -35,8 +35,8 @@ int	check_file(const char *str)
 				i++;
 			}
 			else
-				return (0);
+				return (2);
 		}
 	}
-	return (0);
+	return (3);
 }

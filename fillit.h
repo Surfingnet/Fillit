@@ -19,6 +19,8 @@
 
 int		ft_openfile(char *file);
 char	*ft_readfile(int fd);
+int		ft_checkfile(const char *str);
+char	**ft_putintab(char *s, int len);
 typedef struct		s_tetri
 {
 	int				x[4];
