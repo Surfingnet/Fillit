@@ -20,6 +20,7 @@ char	*ft_readfile(int fd)
 
 	ret = 0;
 	ret = read(fd, buf, BUFF_SIZE);
+	buf[ret] = '\0';
 	if (!(s = ft_strnew(ret)))
 		return (NULL);
 	ft_strcpy(s, buf);

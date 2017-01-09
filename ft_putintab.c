@@ -26,11 +26,11 @@ char	**ft_putintab(char *s, int len)
 
 	if (!(tab = (char **)malloc(sizeof(char *) * (len + 1))))
 		return (NULL);
-	while (s[j] != '\0' && tab[u])
+	while (s[j] != '\0' && u < len)
 	{
 		i = j;
 		j = 0;
-		while (s[j] != '\n' && s[j + 1] != '\n' && s[j + 1] != '\0')
+		while (s[j] != '\n' && (s[j + 1] != '\n' || s[j + 1] != '\0'))
 		{
 			j++;
 		}
