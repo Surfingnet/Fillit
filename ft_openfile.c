@@ -1,29 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   fillit.h                                           :+:      :+:    :+:   */
+/*   ft_openfile.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jgaillar <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/01/04 15:24:17 by jgaillar          #+#    #+#             */
-/*   Updated: 2017/01/09 11:49:51 by jgaillar         ###   ########.fr       */
+/*   Created: 2017/01/09 11:50:21 by jgaillar          #+#    #+#             */
+/*   Updated: 2017/01/09 11:50:22 by jgaillar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FILLIT_H
-# define FILLIT_H
-# define BUFF_SIZE 4096
-#include "libft.h"
-#include <fcntl.h>
-#include <unistd.h>
+#include "fillit.h"
 
-int		ft_openfile(char *file);
-char	*ft_readfile(int fd);
-typedef struct		s_tetri
+int		ft_openfile(char *file)
 {
-	int				x[4];
-	int				y[4];
-	int				letter;
-}					t_tetri;
+	int fd;
 
-#endif
+	fd = (open(file, O_RDONLY));
+	if (fd < 0)
+	{
+		write(2, "error opening file", 19);
+		return (-1);
+	}
+	return (fd);
+}
