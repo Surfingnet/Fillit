@@ -6,13 +6,13 @@
 /*   By: mghazari <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/09 11:55:42 by mghazari          #+#    #+#             */
-/*   Updated: 2017/01/09 15:10:53 by mghazari         ###   ########.fr       */
+/*   Updated: 2017/01/09 15:20:32 by jgaillar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fillit.h"
 
-int	check_file(const char *str)
+int	ft_checkfile(const char *str)
 {
 	int	i;
 	int	t;
