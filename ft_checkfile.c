@@ -6,7 +6,7 @@
 /*   By: mghazari <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/09 11:55:42 by mghazari          #+#    #+#             */
-/*   Updated: 2017/01/09 14:04:44 by mghazari         ###   ########.fr       */
+/*   Updated: 2017/01/09 14:11:17 by mghazari         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,7 @@ int	check_file(const char *str)
 				|| (str[i] == '\n' && i % 4 != 0))
 			return (0);
 		if (str[i] == '\n')
+		{
 			if (str[i + 1] == '\0')
 				return (++t);
 			else if (str[i + 1] == '\n')
@@ -35,5 +36,7 @@ int	check_file(const char *str)
 			}
 			else
 				return (0);
+		}
 	}
+	return (0);
 }
