@@ -12,32 +12,44 @@
 
 #include "fillit.h"
 
-char	**ft_putintab(char *s, int len)
+char	***memtab(int len)
 {
-	char **tab;
+	char ***tab;
 	int i;
 	int j;
-	int u;
 
 	i = 0;
 	j = 0;
-	u = 0;
 
-
-	if (!(tab = (char **)malloc(sizeof(char *) * (len + 1))))
+	if (!(tab = (char ***)malloc(sizeof(char **) * (len + 1))))
 		return (NULL);
-	while (s[j] != '\0' && u < len)
+	tab[len + 1] = NULL;
+	while (tab[i])
 	{
-		i = j;
-		j = 0;
-		while (s[j] != '\n' && (s[j + 1] != '\n' || s[j + 1] != '\0'))
-		{
-			j++;
-		}
-		tab[u] = ft_strsub(s, i, j - i);
-		ft_putendl(tab[u]);
-		u++;
+
+		if (!(tab[i] = (char **)malloc(sizeof(char *) * (5))))
+			return (NULL);
+		i++;
 	}
-	tab[u] = NULL;
+	return (tab);
+}
+
+char	***ft_putintab(char *s, int len)
+{
+	char ***tab;
+	int i;
+	int j;
+
+	i = 0;
+	j = 0;
+
+	if (!(tab = memtab(len)))
+		return (NULL);
+	while (i < len)
+	{
+		if (!(tab[i] = ft_strsplit(ft_strsub(s, i * 21, 21), '\n')))
+			return (NULL);
+		i++;
+	}
 	return (tab);
 }
