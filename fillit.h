@@ -6,7 +6,7 @@
 /*   By: jgaillar <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/04 15:24:17 by jgaillar          #+#    #+#             */
-/*   Updated: 2017/01/10 14:40:46 by mghazari         ###   ########.fr       */
+/*   Updated: 2017/01/10 14:48:13 by mghazari         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,16 +20,18 @@
 int		ft_openfile(char *file);
 int		ft_checkfile(const char *str);
 int		ft_checkarray(char **array[]);
+int		ft_checktetri(char **tab);
 
 char		*ft_readfile(int fd);
 
-char		**ft_putintab(char *s, int len);
+char		***ft_putintab(char *s, int len);
 
-typedef struct		s_tetri
+
+typedef struct	s_tetri
 {
-	int				x[4];
-	int				y[4];
-	int				letter;
-}					t_tetri;
+	int	x[4];
+	int	y[4];
+	int	letter;
+}		t_tetri;
 
 #endif
