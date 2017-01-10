@@ -6,7 +6,7 @@
 /*   By: jgaillar <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/04 15:24:17 by jgaillar          #+#    #+#             */
-/*   Updated: 2017/01/10 14:48:13 by mghazari         ###   ########.fr       */
+/*   Updated: 2017/01/10 14:58:53 by mghazari         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,6 @@
 int		ft_openfile(char *file);
 int		ft_checkfile(const char *str);
 int		ft_checkarray(char **array[]);
-int		ft_checktetri(char **tab);
 
 char		*ft_readfile(int fd);
 
