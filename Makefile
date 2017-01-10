@@ -1,8 +1,8 @@
 NAME =fillit
 SRC_DIR =./
 INCLUDES_DIR =./
-SRCS=main ft_checkfile ft_openfile ft_readfile ft_putintab ft_checkarray\
-ft_freeman 
+SRCS=main ft_checkfile ft_openfile ft_readfile ft_freeman ft_putintab \
+ft_checkarray
 FLAGS=-Wall -Wextra -Werror
 BINS = $(patsubst %,%.o,$(SRCS))
 LIBS =libft
