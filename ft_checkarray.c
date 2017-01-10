@@ -6,7 +6,7 @@
 /*   By: mghazari <mghazari@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/10 13:38:34 by mghazari          #+#    #+#             */
-/*   Updated: 2017/01/10 14:41:26 by mghazari         ###   ########.fr       */
+/*   Updated: 2017/01/10 17:12:22 by mghazari         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,13 +17,13 @@ static int	count_conn(char *tetri[], int i, int j)
 	int connections;
 
 	connections = 0;
-	if ((i - 1) > -1 && tetri[i][j] == '#')
+	if ((i - 1) > -1 && tetri[i - 1][j] == '#')
 		connections++;
-	if ((i + 1) < 4 && tetri[i][j] == '#')
+	if ((i + 1) < 4 && tetri[i + 1][j] == '#')
 		connections++;
-	if ((j - 1) > -1 && tetri[i][j] == '#')
+	if ((j - 1) > -1 && tetri[i][j - 1] == '#')
 		connections++;
-	if ((j + 1) < 4 && tetri[i][j] == '#')
+	if ((j + 1) < 4 && tetri[i][j + 1] == '#')
 		connections++;
 	return (connections);
 }
