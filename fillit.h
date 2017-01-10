@@ -6,7 +6,7 @@
 /*   By: jgaillar <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/04 15:24:17 by jgaillar          #+#    #+#             */
-/*   Updated: 2017/01/10 14:58:53 by mghazari         ###   ########.fr       */
+/*   Updated: 2017/01/10 15:55:27 by mghazari         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,8 @@ int		ft_checkarray(char **array[]);
 char		*ft_readfile(int fd);
 
 char		***ft_putintab(char *s, int len);
+
+void		free_3d(char **array[]);
 
 
 typedef struct	s_tetri
