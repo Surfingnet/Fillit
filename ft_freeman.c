@@ -6,7 +6,7 @@
 /*   By: mghazari <mghazari@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/10 15:37:05 by mghazari          #+#    #+#             */
-/*   Updated: 2017/01/10 15:51:34 by mghazari         ###   ########.fr       */
+/*   Updated: 2017/01/10 16:15:54 by mghazari         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,7 @@ void	free_3d(char **array[])
 		y = -1;
 		while (array[x][++y])
 			ft_strdel(&array[x][y]);
-		free(array[x]);
+		ft_memdel((void*)array[x]);
 	}
+	free(array);
 }
