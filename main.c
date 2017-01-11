@@ -6,7 +6,7 @@
 /*   By: jgaillar <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/04 15:25:56 by jgaillar          #+#    #+#             */
-/*   Updated: 2017/01/10 17:04:48 by mghazari         ###   ########.fr       */
+/*   Updated: 2017/01/11 10:36:34 by mghazari         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ int	main(int argc, char *argv[])
 		return (1);
 	}
 	tab = (ft_putintab(s, t));
-	if (!ft_checkarray(tab))
+	if (!(tab && ft_checkarray(tab)))
 	{
 		ft_putendl("error2");
 		return (1);
