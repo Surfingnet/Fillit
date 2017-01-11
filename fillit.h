@@ -6,7 +6,7 @@
 /*   By: jgaillar <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/04 15:24:17 by jgaillar          #+#    #+#             */
-/*   Updated: 2017/01/11 14:33:25 by jgaillar         ###   ########.fr       */
+/*   Updated: 2017/01/11 14:59:19 by mghazari         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,9 @@ int			ft_canbemoved(char **array[], int level, int up, int right);
 
 char		*ft_readfile(int fd);
 
+char		**ft_malloc2d(int x, int y);
+
+char		***ft_malloc3d(int x, int y, int z);
 char		***ft_putintab(char *s, int len);
 
 void		free_3d(char **array[]);

@@ -6,7 +6,7 @@
 /*   By: mghazari <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/11 14:17:32 by mghazari          #+#    #+#             */
-/*   Updated: 2017/01/11 14:54:26 by mghazari         ###   ########.fr       */
+/*   Updated: 2017/01/11 15:01:38 by mghazari         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 char	**ft_malloc2d(int x, int y)
 {
-	char *array[];
+	char **array;
 	int i;
 
 	i = -1;
@@ -24,7 +24,7 @@ char	**ft_malloc2d(int x, int y)
 	{
 		if (!(array[i] = ft_strnew(x)))
 		{
-			free2d(array);
+			free_2d(array);
 			return (NULL);
 		}
 	}
@@ -33,9 +33,8 @@ char	**ft_malloc2d(int x, int y)
 
 char	***ft_malloc3d(int x, int y, int z)
 {
-	char	**array[];
+	char	***array;
 	int		i;
-	int		y;
 
 	i = -1;
 	if (!(array = ft_memalloc(sizeof(char**) * z)))
@@ -45,7 +44,7 @@ char	***ft_malloc3d(int x, int y, int z)
 		while (++i < z)
 			if(!(array[i] = ft_malloc2d(x, y)))
 			{
-				free3d(array);
+				free_3d(array);
 				return (NULL);
 			}
 	}
