@@ -6,7 +6,7 @@
 /*   By: jgaillar <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/11 14:09:20 by jgaillar          #+#    #+#             */
-/*   Updated: 2017/01/11 14:09:24 by jgaillar         ###   ########.fr       */
+/*   Updated: 2017/01/11 17:30:56 by mghazari         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,29 +18,33 @@ void 	ft_letter(char **array[])
 	int j;
 	int k;
 
-	i = 0;
-	j = 0;
-	k = 0;
-	while (array[i])
+	i = -1;
+	while (array[++i])
 	{
-		while (array[i][j])
+		j = -1;
+		while (array[i][++j])
 		{
-			while (array[i][j][k])
-			{
-				if (array[i][j][k] != '#')
-				{
-					k++;
-				}
-				else if (array[i][j][k] == '#')
-				{
-					array[i][j][k] = 'A' + i;
-					k++;
-				}
-			}
-			k = 0;
-			j++;
+			k = -1;
+			while (array[i][j][++k])
+				array[i][j][k] = (array[i][j][k] == '#' ? 'A' + i : '.');
 		}
-		j = 0;
-		i++;
 	}
+}
+
+void	ft_arrayset2d(char *array[], int x, int y)
+{
+	int	i;
+
+	i = -1;
+	while (++i < y)
+		ft_memset(array[i], (int)'.', x);
+}
+
+void	ft_arrayset3d(char **array[], int x, int y, int z)
+{
+	int	i;
+
+	i  = -1;
+	while (++i < z)
+		ft_arrayset2d(array[i], x, y);
 }

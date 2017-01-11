@@ -6,7 +6,7 @@
 /*   By: jgaillar <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/04 15:25:56 by jgaillar          #+#    #+#             */
-/*   Updated: 2017/01/11 16:52:49 by mghazari         ###   ########.fr       */
+/*   Updated: 2017/01/11 17:34:16 by mghazari         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,6 +39,7 @@ int	main(int argc, char *argv[])
 	}
 	ft_to_upleft(tab);
 	ft_letter(tab);
+	ft_arrayset3d(tab, 4, 4, t);
 	ft_display3d(tab);
 	/*
 	**TODO

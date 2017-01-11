@@ -6,7 +6,7 @@
 /*   By: jgaillar <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/04 15:24:17 by jgaillar          #+#    #+#             */
-/*   Updated: 2017/01/11 14:59:19 by mghazari         ###   ########.fr       */
+/*   Updated: 2017/01/11 17:33:20 by mghazari         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,6 +38,8 @@ void		ft_display2d(char *array[]);
 void		ft_display3d(char **array[]);
 void		ft_letter(char **array[]);
 void 		ft_error(char *s);
+void		ft_arrayset2d(char *array[], int x, int y);
+void		ft_arrayset3d(char **array[], int x, int y, int z);
 
 typedef struct	s_tetri
 {
