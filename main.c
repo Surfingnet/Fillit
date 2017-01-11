@@ -6,7 +6,7 @@
 /*   By: jgaillar <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/04 15:25:56 by jgaillar          #+#    #+#             */
-/*   Updated: 2017/01/11 10:36:34 by mghazari         ###   ########.fr       */
+/*   Updated: 2017/01/11 12:47:14 by mghazari         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,8 +33,11 @@ int	main(int argc, char *argv[])
 		ft_putendl("error2");
 		return (1);
 	}
+	ft_to_upleft(tab);
+	ft_display3d(tab);
 	/*
 	**TODO
 	*/
+	ft_putendl("\n\n-OK");
 	return (0);
 }
