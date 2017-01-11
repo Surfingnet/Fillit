@@ -6,7 +6,7 @@
 /*   By: mghazari <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/11 11:00:11 by mghazari          #+#    #+#             */
-/*   Updated: 2017/01/11 12:32:40 by mghazari         ###   ########.fr       */
+/*   Updated: 2017/01/11 14:12:11 by mghazari         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ int	ft_checkcollision(char **array[], int a, int b)
 	{
 		j = -1;
 		while (array[a][i][++j])
-			if (array[a][i][j] == '#' && array[b][i][j] == '#')
+			if (array[a][i][j] != '.' && array[b][i][j] != '.')
 				return (0);
 	}
 	return (1);

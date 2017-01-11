@@ -6,7 +6,7 @@
 /*   By: jgaillar <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/04 15:24:17 by jgaillar          #+#    #+#             */
-/*   Updated: 2017/01/11 12:44:40 by mghazari         ###   ########.fr       */
+/*   Updated: 2017/01/11 14:08:53 by mghazari         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,7 @@ char		*ft_readfile(int fd);
 char		***ft_putintab(char *s, int len);
 
 void		free_3d(char **array[]);
+void		free_2d(char *array[]);
 void		ft_move(char **array[], int level, int up, int right);
 void		ft_to_upleft(char **array[]);
 void		ft_display2d(char *array[]);

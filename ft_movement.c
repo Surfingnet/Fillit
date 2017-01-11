@@ -6,7 +6,7 @@
 /*   By: mghazari <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/11 11:19:07 by mghazari          #+#    #+#             */
-/*   Updated: 2017/01/11 12:36:12 by mghazari         ###   ########.fr       */
+/*   Updated: 2017/01/11 14:10:38 by mghazari         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,9 +23,9 @@ void	ft_move(char **array[], int level, int up, int right)
 		j = -1;
 		while (array[level][i][++j])
 		{
-			if (array[level][i][j] == '#')
+			if (array[level][i][j] != '.')
 			{
-				array[level][i - up][j + right] = '#';
+				array[level][i - up][j + right] = array[level][i][j];
 				array[level][i][j] = '.';
 			}
 		}
@@ -42,7 +42,7 @@ int 	ft_canbemoved(char **array[], int level, int up, int right)
 	{
 		j = -1;
 		while (array[level][i][++j])
-			if(array[level][i][j] == '#')
+			if(array[level][i][j] != '.')
 				if((i - up) < 0 || (i - up) > 3 || (j + right) < 0 || \
 						(j + right) > 3)
 					return (0);
