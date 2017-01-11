@@ -37,6 +37,7 @@ void		ft_to_upleft(char **array[]);
 void		ft_display2d(char *array[]);
 void		ft_display3d(char **array[]);
 void		ft_letter(char **array[]);
+void 		ft_error(char *s);
 
 typedef struct	s_tetri
 {

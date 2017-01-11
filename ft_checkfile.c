@@ -22,7 +22,7 @@ static int	perform_check(const char *str, int i, int j, int t)
 		{
 			j++;
 			if (str[i + 1] == '\0')
-					return (++t < 26 && t > 4 ? t : 0);
+					return (++t < 26 ? t : 0);
 			else if (str[i + 1] == '\n')
 			{
 				t++;
