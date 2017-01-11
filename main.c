@@ -20,17 +20,21 @@ int	main(int argc, char *argv[])
 	int	t;
 
 	i = 0;
+
 	if (argc != 2)
+	{
+		ft_error("usage: ./fillit file");
 		return (1);
+	}
 	if (!((s = ft_readfile(ft_openfile(argv[1]))) && (t = ft_checkfile(s))))
 	{
-		ft_putendl("error1");
+		ft_error("error1");
 		return (1);
 	}
 	tab = (ft_putintab(s, t));
 	if (!(tab && ft_checkarray(tab)))
 	{
-		ft_putendl("error2");
+		ft_error("error2");
 		return (1);
 	}
 	ft_to_upleft(tab);
