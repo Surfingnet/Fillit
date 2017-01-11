@@ -34,6 +34,6 @@ void	free_2d(char *array[])
 
 	i = -1;
 	while (array[++i])
-		ft_strdel(&array[i])
+		ft_strdel(&array[i]);
 	free(array);
 }
