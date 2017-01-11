@@ -6,7 +6,7 @@
 /*   By: jgaillar <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/04 15:24:17 by jgaillar          #+#    #+#             */
-/*   Updated: 2017/01/11 14:08:53 by mghazari         ###   ########.fr       */
+/*   Updated: 2017/01/11 14:33:25 by jgaillar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,7 @@ void		ft_move(char **array[], int level, int up, int right);
 void		ft_to_upleft(char **array[]);
 void		ft_display2d(char *array[]);
 void		ft_display3d(char **array[]);
+void		ft_letter(char **array[]);
 
 typedef struct	s_tetri
 {
