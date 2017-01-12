@@ -14,9 +14,9 @@
 
 char	*ft_readfile(int fd)
 {
-	int ret;
-	char buf[BUFF_SIZE + 1];
-	char *s;
+	int		ret;
+	char	buf[BUFF_SIZE + 1];
+	char	*s;
 
 	ret = 0;
 	ret = read(fd, buf, BUFF_SIZE);

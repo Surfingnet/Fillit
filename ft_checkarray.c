@@ -31,10 +31,10 @@ static int	count_conn(char *tetri[], int i, int j)
 		connections++;
 	if ((j + 1) < 4 && tetri[i][j + 1] != '.')
 		connections++;
-	
+
 	ft_putnbr(connections);
 	ft_putendl("\n");
-	
+
 	return (connections);
 }
 

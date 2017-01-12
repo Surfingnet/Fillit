@@ -14,8 +14,8 @@
 
 char	**ft_malloc2d(int x, int y)
 {
-	char **array;
-	int i;
+	char	**array;
+	int		i;
 
 	i = -1;
 	if (!(array = ft_memalloc(sizeof(char*) * y)))
@@ -42,7 +42,7 @@ char	***ft_malloc3d(int x, int y, int z)
 	else
 	{
 		while (++i < z)
-			if(!(array[i] = ft_malloc2d(x, y)))
+			if (!(array[i] = ft_malloc2d(x, y)))
 			{
 				free_3d(array);
 				return (NULL);

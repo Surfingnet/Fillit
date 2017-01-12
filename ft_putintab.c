@@ -14,13 +14,12 @@
 
 char	***memtab(int len)
 {
-	char ***tab;
-	int i;
-	int j;
+	char	***tab;
+	int		i;
+	int		j;
 
 	i = -1;
 	j = 0;
-
 	if (!(tab = (char ***)malloc(sizeof(char **) * (len + 1))))
 		return (NULL);
 	tab[len] = NULL;
@@ -32,11 +31,10 @@ char	***memtab(int len)
 
 char	***ft_putintab(char *s, int len)
 {
-	char ***tab;
-	int i;
+	char	***tab;
+	int		i;
 
 	i = -1;
-
 	if (!(tab = memtab(len)))
 		return (NULL);
 	while (++i < len)

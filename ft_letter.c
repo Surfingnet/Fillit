@@ -6,13 +6,13 @@
 /*   By: jgaillar <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/11 14:09:20 by jgaillar          #+#    #+#             */
-/*   Updated: 2017/01/11 17:30:56 by mghazari         ###   ########.fr       */
+/*   Updated: 2017/01/12 13:02:10 by jgaillar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fillit.h"
 
-void 	ft_letter(char **array[])
+void	ft_letter(char **array[])
 {
 	int i;
 	int j;
@@ -44,7 +44,7 @@ void	ft_arrayset3d(char **array[], int x, int y, int z)
 {
 	int	i;
 
-	i  = -1;
+	i = -1;
 	while (++i < z)
 		ft_arrayset2d(array[i], x, y);
 }

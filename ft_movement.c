@@ -32,7 +32,7 @@ void	ft_move(char **array[], int level, int up, int right)
 	}
 }
 
-int 	ft_canbemoved(char **array[], int level, int up, int right)
+int		ft_canbemoved(char **array[], int level, int up, int right)
 {
 	int	i;
 	int	j;
@@ -42,8 +42,8 @@ int 	ft_canbemoved(char **array[], int level, int up, int right)
 	{
 		j = -1;
 		while (array[level][i][++j])
-			if(array[level][i][j] != '.')
-				if((i - up) < 0 || (i - up) > 3 || (j + right) < 0 || \
+			if (array[level][i][j] != '.')
+				if ((i - up) < 0 || (i - up) > 3 || (j + right) < 0 || \
 						(j + right) > 3)
 					return (0);
 	}
