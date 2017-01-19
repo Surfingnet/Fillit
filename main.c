@@ -6,7 +6,7 @@
 /*   By: jgaillar <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/04 15:25:56 by jgaillar          #+#    #+#             */
-/*   Updated: 2017/01/19 02:30:28 by mghazari         ###   ########.fr       */
+/*   Updated: 2017/01/19 03:12:14 by mghazari         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,5 +54,6 @@ int		main(int argc, char *argv[])
 	}
 	//ft_display2d(res);
 	free_2d(res);
+	free_3d(array);
 	return (0);
 }

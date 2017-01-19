@@ -6,7 +6,7 @@
 /*   By: mghazari <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/11 14:17:32 by mghazari          #+#    #+#             */
-/*   Updated: 2017/01/19 02:45:36 by mghazari         ###   ########.fr       */
+/*   Updated: 2017/01/19 04:00:37 by mghazari         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,8 +73,6 @@ char		**new_2d_cpy(char *actual[])
 
 char		**restore(char *actual[], char *cpy[])
 {
-	//free_2d(actual);
 	actual = cpy;
-	cpy = NULL;
 	return (actual);
 }
