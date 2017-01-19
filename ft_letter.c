@@ -6,7 +6,7 @@
 /*   By: jgaillar <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/11 14:09:20 by jgaillar          #+#    #+#             */
-/*   Updated: 2017/01/12 13:02:10 by jgaillar         ###   ########.fr       */
+/*   Updated: 2017/01/14 11:45:42 by mghazari         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,8 @@ void	ft_letter(char **array[])
 		{
 			k = -1;
 			while (array[i][j][++k])
-				array[i][j][k] = (array[i][j][k] == '#' ? 'A' + i : '.');
+				array[i][j][k] = (array[i][j][k] == '#' ?\
+				'A' + i : '.');
 		}
 	}
 }

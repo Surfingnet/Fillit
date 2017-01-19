@@ -1,25 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_openfile.c                                      :+:      :+:    :+:   */
+/*   ft_transfer.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jgaillar <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: mghazari <mghazari@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/01/09 11:50:21 by jgaillar          #+#    #+#             */
-/*   Updated: 2017/01/18 20:56:59 by mghazari         ###   ########.fr       */
+/*   Created: 2017/01/18 18:06:46 by mghazari          #+#    #+#             */
+/*   Updated: 2017/01/19 00:15:52 by mghazari         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fillit.h"
 
-int		ft_openfile(char *file)
+int	ft_transfer(char *tetri[], char *array[], int x, int y)
 {
-	int fd;
+	int	i;
+	int	j;
 
-	fd = (open(file, O_RDONLY));
-	if (fd < 0)
+	if (!ft_checkcollision(tetri, array, x, y))
+		return (0);
+	i = -1;
+	while (++i < 4)
 	{
-		return (-1);
+		j = -1;
+		while (++j < 4)
+			if (tetri[i][j] != '.')
+				array[i + y][j + x] = tetri[i][j];
 	}
-	return (fd);
+	return (1);
 }

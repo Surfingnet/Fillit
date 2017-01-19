@@ -6,7 +6,7 @@
 /*   By: mghazari <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/11 12:37:39 by mghazari          #+#    #+#             */
-/*   Updated: 2017/01/11 12:43:58 by mghazari         ###   ########.fr       */
+/*   Updated: 2017/01/18 22:51:35 by mghazari         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,10 +18,7 @@ void	ft_display2d(char *array[])
 
 	i = -1;
 	while (array[++i])
-	{
 		ft_putendl(array[i]);
-	}
-	ft_putchar('\n');
 }
 
 void	ft_display3d(char **array[])

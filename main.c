@@ -6,44 +6,53 @@
 /*   By: jgaillar <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/04 15:25:56 by jgaillar          #+#    #+#             */
-/*   Updated: 2017/01/11 17:34:16 by mghazari         ###   ########.fr       */
+/*   Updated: 2017/01/19 02:30:28 by mghazari         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fillit.h"
 
-int	main(int argc, char *argv[])
+static char	***preprocessor(int argc, char *argv[])
 {
-	char	***tab;
+	char	***array;
 	char	*s;
-	int	i;
 	int	t;
-
-	i = 0;
 
 	if (argc != 2)
 	{
 		ft_error("usage: ./fillit file");
-		return (1);
+		return (NULL);
 	}
 	if (!((s = ft_readfile(ft_openfile(argv[1]))) && (t = ft_checkfile(s))))
 	{
 		ft_error("error");
-		return (1);
+		return (NULL);
 	}
-	tab = (ft_putintab(s, t));
-	if (!(tab && ft_checkarray(tab)))
+	array = (ft_putintab(s, t));
+	if (!(array && ft_checkarray(array)))
+	{
+		ft_error("error");
+		return (NULL);
+	}
+	return (array);
+}
+
+int		main(int argc, char *argv[])
+{
+	char	***array;
+	char	**res;
+	
+	if (!(array = preprocessor(argc, argv)))
+		return (1);
+	ft_to_upleft(array);
+	ft_letter(array);
+	res = ft_solver(array);
+	if (!res)
 	{
 		ft_error("error");
 		return (1);
 	}
-	ft_to_upleft(tab);
-	ft_letter(tab);
-	ft_arrayset3d(tab, 4, 4, t);
-	ft_display3d(tab);
-	/*
-	**TODO
-	*/
-	ft_putendl("\n\n-OK");
+	//ft_display2d(res);
+	free_2d(res);
 	return (0);
 }
