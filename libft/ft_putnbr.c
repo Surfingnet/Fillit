@@ -1,18 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_error.c                                         :+:      :+:    :+:   */
+/*   ft_putnbr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jgaillar <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: mghazari <mghazari@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/01/11 15:28:41 by jgaillar          #+#    #+#             */
-/*   Updated: 2017/01/25 14:49:48 by mghazari         ###   ########.fr       */
+/*   Created: 2016/12/27 05:43:04 by mghazari          #+#    #+#             */
+/*   Updated: 2016/12/27 05:44:03 by mghazari         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "fillit.h"
+#include "libft.h"
 
-void	ft_error(char *s)
+void	ft_putnbr(int n)
 {
-	write(1, s, ft_strlen(s));
+	unsigned int nb;
+
+	nb = (unsigned int)n;
+	if (n < 0)
+	{
+		write(1, "-", 1);
+		nb = -n;
+	}
+	if (nb > 9)
+	{
+		ft_putnbr(nb / 10);
+		ft_putnbr(nb % 10);
+	}
+	else
+	{
+		nb = nb + '0';
+		write(1, &nb, 1);
+	}
 }

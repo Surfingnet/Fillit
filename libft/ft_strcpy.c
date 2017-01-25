@@ -1,18 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_error.c                                         :+:      :+:    :+:   */
+/*   ft_strcpy.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jgaillar <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: mghazari <mghazari@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/01/11 15:28:41 by jgaillar          #+#    #+#             */
-/*   Updated: 2017/01/25 14:49:48 by mghazari         ###   ########.fr       */
+/*   Created: 2016/12/27 05:48:06 by mghazari          #+#    #+#             */
+/*   Updated: 2016/12/27 05:48:07 by mghazari         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "fillit.h"
+#include "stdlib.h"
 
-void	ft_error(char *s)
+char	*ft_strcpy(char *dst, const char *src)
 {
-	write(1, s, ft_strlen(s));
+	int i;
+
+	i = 0;
+	while (src[i] != '\0')
+	{
+		dst[i] = src[i];
+		i++;
+	}
+	dst[i] = '\0';
+	return (dst);
 }

@@ -1,18 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_error.c                                         :+:      :+:    :+:   */
+/*   ft_lstdel.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jgaillar <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: mghazari <mghazari@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/01/11 15:28:41 by jgaillar          #+#    #+#             */
-/*   Updated: 2017/01/25 14:49:48 by mghazari         ###   ########.fr       */
+/*   Created: 2016/12/29 21:46:59 by mghazari          #+#    #+#             */
+/*   Updated: 2016/12/29 22:35:23 by mghazari         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "fillit.h"
+#include "libft.h"
 
-void	ft_error(char *s)
+void	ft_lstdel(t_list **alst, void (*del)(void *,size_t))
 {
-	write(1, s, ft_strlen(s));
+	if (((*alst)->next))
+		ft_lstdel(&((*alst)->next), del);
+	ft_lstdelone(alst, del);
+	free(*alst);
+	*alst = NULL;
 }

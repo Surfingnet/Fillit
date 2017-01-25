@@ -1,18 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_error.c                                         :+:      :+:    :+:   */
+/*   ft_memdel.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jgaillar <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: mghazari <mghazari@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/01/11 15:28:41 by jgaillar          #+#    #+#             */
-/*   Updated: 2017/01/25 14:49:48 by mghazari         ###   ########.fr       */
+/*   Created: 2016/12/27 05:45:17 by mghazari          #+#    #+#             */
+/*   Updated: 2016/12/29 11:03:06 by mghazari         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "fillit.h"
+#include "libft.h"
 
-void	ft_error(char *s)
+void	ft_memdel(void **ap)
 {
-	write(1, s, ft_strlen(s));
+	if (ap)
+	{
+		free(*ap);
+		*ap = NULL;
+	}
 }

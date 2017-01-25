@@ -1,18 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_error.c                                         :+:      :+:    :+:   */
+/*   ft_memset.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jgaillar <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: mghazari <mghazari@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/01/11 15:28:41 by jgaillar          #+#    #+#             */
-/*   Updated: 2017/01/25 14:49:48 by mghazari         ###   ########.fr       */
+/*   Created: 2016/12/27 05:31:54 by mghazari          #+#    #+#             */
+/*   Updated: 2016/12/27 05:31:58 by mghazari         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "fillit.h"
+#include "libft.h"
 
-void	ft_error(char *s)
+void	*ft_memset(void *b, int c, size_t len)
 {
-	write(1, s, ft_strlen(s));
+	size_t			i;
+	unsigned char	n;
+	char			*s;
+
+	i = 0;
+	n = (unsigned char)c;
+	s = (char *)b;
+	while (i < len)
+	{
+		s[i] = n;
+		i++;
+	}
+	return (b);
 }

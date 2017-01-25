@@ -6,14 +6,14 @@
 /*   By: jgaillar <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/04 15:24:17 by jgaillar          #+#    #+#             */
-/*   Updated: 2017/01/19 00:47:29 by mghazari         ###   ########.fr       */
+/*   Updated: 2017/01/25 14:24:41 by mghazari         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef FILLIT_H
 # define FILLIT_H
 # define BUFF_SIZE 4096
-#include "libft.h"
+#include "./libft/libft.h"
 #include <fcntl.h>
 #include <unistd.h>
 

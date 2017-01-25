@@ -1,18 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_error.c                                         :+:      :+:    :+:   */
+/*   ft_strequ.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jgaillar <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: mghazari <mghazari@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/01/11 15:28:41 by jgaillar          #+#    #+#             */
-/*   Updated: 2017/01/25 14:49:48 by mghazari         ###   ########.fr       */
+/*   Created: 2016/12/27 05:54:31 by mghazari          #+#    #+#             */
+/*   Updated: 2016/12/27 05:54:33 by mghazari         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "fillit.h"
+#include "libft.h"
 
-void	ft_error(char *s)
+int		ft_strequ(char const *s1, char const *s2)
 {
-	write(1, s, ft_strlen(s));
+	int i;
+
+	i = 0;
+	if (!s1 || !s2)
+		return (0);
+	while (s1[i] == s2[i])
+	{
+		if (s1[i] == '\0')
+			return (1);
+		i++;
+	}
+	return (0);
 }

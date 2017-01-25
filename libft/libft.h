@@ -6,7 +6,7 @@
 /*   By: mghazari <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/12/09 10:58:52 by mghazari          #+#    #+#             */
-/*   Updated: 2017/01/04 16:07:18 by mghazari         ###   ########.fr       */
+/*   Updated: 2016/12/30 00:22:36 by mghazari         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,12 +16,12 @@
 # include <unistd.h>
 # include <stdlib.h>
 
-typedef struct	s_list
+typedef struct		s_list
 {
-	void			*content;
-	size_t			content_size;
+	void		*content;
+	size_t		content_size;
 	struct s_list	*next;
-}				t_list;
+}			t_list;
 
 void			*ft_memalloc(size_t size);
 void			*ft_memccpy(void *dst, const void *src, int c, size_t n);
@@ -47,7 +47,7 @@ void			ft_strclr(char *s);
 void			ft_striter(char *s, void (*f)(char *));
 void			ft_striteri(char *s, void (*f)(unsigned int, char *));
 void			ft_lstdelone(t_list **alst, void (*del)(void*, size_t));
-void			ft_lstdel(t_list **alst, void (*del)(void *, size_t));
+void			ft_lstdel(t_list **alst, void (*del)(void *,size_t));
 void			ft_lstadd(t_list **alst, t_list *new);
 void			ft_lstiter(t_list *lst, void (*f)(t_list *elem));
 
@@ -74,19 +74,19 @@ char			**ft_strsplit(char const *s, char c);
 size_t			ft_strlen(const char *s);
 size_t			ft_strlcat(char *dst, const char *src, size_t size);
 
-int				ft_strcmp(const char *s1, const char *s2);
-int				ft_strncmp(const char *s1, const char *s2, size_t n);
-int				ft_memcmp(const void *s1, const void *s2, size_t n);
-int				ft_strequ(char const *s1, char const *s2);
-int				ft_strnequ(char const *s1, char const *s2, size_t n);
-int				ft_atoi(const char *nptr);
-int				ft_isalnum(int c);
-int				ft_isalpha(int c);
-int				ft_isascii(int c);
-int				ft_isdigit(int c);
-int				ft_isprint(int c);
-int				ft_tolower(int c);
-int				ft_toupper(int c);
+int			ft_strcmp(const char *s1, const char *s2);
+int			ft_strncmp(const char *s1, const char *s2, size_t n);
+int			ft_memcmp(const void *s1, const void *s2, size_t n);
+int			ft_strequ(char const *s1, char const *s2);
+int			ft_strnequ(char const *s1, char const *s2, size_t n);
+int			ft_atoi(const char *nptr);
+int			ft_isalnum(int c);
+int			ft_isalpha(int c);
+int			ft_isascii(int c);
+int			ft_isdigit(int c);
+int			ft_isprint(int c);
+int			ft_tolower(int c);
+int			ft_toupper(int c);
 
 t_list			*ft_lstnew(void const *content, size_t content_size);
 t_list			*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem));
