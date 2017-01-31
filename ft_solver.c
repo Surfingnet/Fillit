@@ -38,7 +38,7 @@ static int	ft_rec(char **tetriminos[], char *array[], int x, int y, int z)
 
 char		**ft_solver(char **tetriminos[])
 {
-	int	i;
+	int		i;
 	char	**array;
 
 	i = 2;

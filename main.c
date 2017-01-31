@@ -16,7 +16,7 @@ static char	***preprocessor(int argc, char *argv[])
 {
 	char	***array;
 	char	*s;
-	int	t;
+	int		t;
 
 	if (argc != 2)
 	{
@@ -37,11 +37,11 @@ static char	***preprocessor(int argc, char *argv[])
 	return (array);
 }
 
-int		main(int argc, char *argv[])
+int			main(int argc, char *argv[])
 {
 	char	***array;
 	char	**res;
-	
+
 	if (!(array = preprocessor(argc, argv)))
 		return (1);
 	ft_to_upleft(array);
@@ -52,7 +52,6 @@ int		main(int argc, char *argv[])
 		ft_error("error");
 		return (1);
 	}
-	//ft_display2d(res);
 	free_2d(res);
 	free_3d(array);
 	return (0);
