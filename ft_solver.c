@@ -12,39 +12,72 @@
 
 #include "fillit.h"
 
-static int	ft_rec(char **tetriminos[], char *array[], int x, int y, int z)
+static t_pos	ft_posbis(t_pos pos, int x, int y)
 {
-	char	**backup;
-
-	if (!tetriminos[z])
-	{
-		ft_display2d(array);
-		free_2d(array);
-		return (1);
-	}
-	backup = new_2d_cpy(array);
-	if (ft_transfer(tetriminos[z], array, x, y) && \
-			ft_rec(tetriminos, array, 0, 0, z + 1))
-	{
-		free_2d(backup);
-		return (1);
-	}
-	else if (array[y][x + 1] == '\0')
-		return (array[y + 1] ? ft_rec(tetriminos, \
-					restore(array, backup), 0, ++y, z) : 0);
-	else
-		return (ft_rec(tetriminos, restore(array, backup), ++x, y, z));
+	pos.z = pos.z - 1;
+	pos.y = y;
+	pos.x = x + 1;
+	return (pos);
 }
 
-char		**ft_solver(char **tetriminos[])
+static t_pos	ft_pos(t_pos pos)
+{
+	pos.z = pos.z + 1;
+	pos.x = 0;
+	pos.y = 0;
+	return (pos);
+}
+
+static int		ft_disfree(char *array[], int i)
+{
+	if (i > 0)
+		ft_display2d(array);
+	free_2d(array);
+	return (1);
+}
+
+static int		ft_rec(char **tetriminos[], char *array[], t_pos pos)
+{
+	char	**backup;
+	int		x;
+	int		y;
+
+	if (!tetriminos[pos.z])
+		return (ft_disfree(array, 1));
+	x = pos.x;
+	y = pos.y;
+	pos = ft_pos(pos);
+	backup = new_2d_cpy(array);
+	if (ft_transfer(tetriminos[pos.z - 1], array, x, y) && \
+			ft_rec(tetriminos, array, pos))
+		return (ft_disfree(backup, 0));
+	if (array[y][x + 1] == '\0')
+	{
+		pos.z = pos.z - 1;
+		pos.y = y + 1;
+		return (array[y + 1] ? ft_rec(tetriminos, \
+					restore(array, backup), pos) : 0);
+	}
+	else
+	{
+		pos = ft_posbis(pos, x, y);
+		return (ft_rec(tetriminos, restore(array, backup), pos));
+	}
+}
+
+char			**ft_solver(char **tetriminos[])
 {
 	int		i;
 	char	**array;
+	t_pos	pos;
 
+	pos.x = 0;
+	pos.y = 0;
+	pos.z = 0;
 	i = 2;
 	while (!(array = ft_malloc2d(i, i)))
 		continue;
-	while (!ft_rec(tetriminos, array, 0, 0, 0))
+	while (!ft_rec(tetriminos, array, pos))
 	{
 		++i;
 		free_2d(array);

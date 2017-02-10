@@ -23,7 +23,8 @@ static char	***preprocessor(int argc, char *argv[])
 		ft_error("usage: ./fillit file");
 		return (NULL);
 	}
-	if (!((s = ft_readfile(ft_openfile(argv[1]))) && (t = ft_checkfile(s))))
+	if (!((s = ft_readfile(ft_openfile(argv[1])))
+		&& (t = ft_checkfile(s))))
 	{
 		ft_error("error");
 		return (NULL);

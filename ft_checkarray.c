@@ -64,14 +64,14 @@ static int	four_blocks(char *tetri[])
 	return (f == 4);
 }
 
-int		ft_checkarray(char **array[])
+int			ft_checkarray(char **array[])
 {
 	int	i;
 
 	i = -1;
 	while (array[++i])
 	{
-		if(!(four_blocks(array[i]) && connected(array[i])))
+		if (!(four_blocks(array[i]) && connected(array[i])))
 		{
 			free_3d(array);
 			return (0);

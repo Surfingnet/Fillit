@@ -17,12 +17,12 @@
 # include <fcntl.h>
 # include <unistd.h>
 
-typedef struct	s_list
+typedef struct	s_pos
 {
 	int					x;
 	int					y;
 	int					z;
-}				t_list;
+}				t_pos;
 int				ft_openfile(char *file);
 int				ft_checkfile(const char *str);
 int				ft_checkarray(char **array[]);

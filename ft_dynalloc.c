@@ -25,7 +25,7 @@ static int	get_v(char *array[])
 char		**ft_malloc2d(int x, int y)
 {
 	char	**array;
-	int	i;
+	int		i;
 
 	i = -1;
 	while (!(array = (char**)ft_memalloc(sizeof(char*) * (y + 1))))
@@ -45,7 +45,7 @@ char		***ft_malloc3d(int x, int y, int z)
 	int		i;
 
 	i = -1;
-	while(!(array = ft_memalloc(sizeof(char**) * (z + 1))))
+	while (!(array = ft_memalloc(sizeof(char**) * (z + 1))))
 		continue;
 	while (++i < z)
 		while (!(array[i] = ft_malloc2d(x, y)))
@@ -56,12 +56,12 @@ char		***ft_malloc3d(int x, int y, int z)
 char		**new_2d_cpy(char *actual[])
 {
 	char	**array;
-	int	i;
-	int	y;
+	int		i;
+	int		y;
 
 	y = get_v(actual);
 	i = -1;
-	while(!(array = (char**)ft_memalloc(sizeof(char*) * (y + 1))))
+	while (!(array = (char**)ft_memalloc(sizeof(char*) * (y + 1))))
 		continue;
 	while (++i < y)
 	{

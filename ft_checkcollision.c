@@ -28,7 +28,7 @@ static int	horizontal(char *tetri[])
 		while (++j < 4 && !tmp)
 			tmp = tetri[j][i] != '.';
 	}
-	return res;
+	return (res);
 }
 
 static int	vertical(char *tetri[])
@@ -44,11 +44,11 @@ static int	vertical(char *tetri[])
 	{
 		tmp = 0;
 		j = -1;
-		while(++j < 4 && !tmp)
+		while (++j < 4 && !tmp)
 			tmp = tetri[i][j] != '.';
 		res += tmp;
 	}
-	return res;
+	return (res);
 }
 
 static int	out_of_range(char *tetri[], char *array[], int x, int y)
@@ -70,7 +70,7 @@ static int	out_of_range(char *tetri[], char *array[], int x, int y)
 	return (i != h);
 }
 
-int		ft_checkcollision(char *tetri[], char *array[], int x, int y)
+int			ft_checkcollision(char *tetri[], char *array[], int x, int y)
 {
 	int	i;
 	int	j;
