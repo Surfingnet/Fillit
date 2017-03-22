@@ -6,7 +6,7 @@
 /*   By: mghazari <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/11 17:07:23 by mghazari          #+#    #+#             */
-/*   Updated: 2017/01/19 03:44:22 by mghazari         ###   ########.fr       */
+/*   Updated: 2017/02/17 14:25:52 by jgaillar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,15 +42,19 @@ static int		ft_rec(char **tetriminos[], char *array[], t_pos pos)
 	int		x;
 	int		y;
 
+	backup = new_2d_cpy(array);
 	if (!tetriminos[pos.z])
+	{
 		return (ft_disfree(array, 1));
+	}
 	x = pos.x;
 	y = pos.y;
 	pos = ft_pos(pos);
-	backup = new_2d_cpy(array);
 	if (ft_transfer(tetriminos[pos.z - 1], array, x, y) && \
 			ft_rec(tetriminos, array, pos))
+	{
 		return (ft_disfree(backup, 0));
+	}
 	if (array[y][x + 1] == '\0')
 	{
 		pos.z = pos.z - 1;
